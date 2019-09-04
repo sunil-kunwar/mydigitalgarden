@@ -67,7 +67,7 @@
     }
     else{
 ?>
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="upload_image.php" method="post" enctype="multipart/form-data">
         <p>Choose a file:<br><input type="file" name="image" /></p>
         <p>Choose an album:<br>
         <select name="album_id">

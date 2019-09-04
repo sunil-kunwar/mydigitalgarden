@@ -43,5 +43,6 @@
     </form>
 
 <?php
-    include 'footer.php';
+
+   include 'templates/footer.php';
 ?>

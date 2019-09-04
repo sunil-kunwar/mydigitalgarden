@@ -1,5 +1,6 @@
 <?php   
     include 'init.php';
+
     if(!logged_in()){
         header('Location: index.php');
         exit();
@@ -34,5 +35,6 @@
                 [<a href="delete_image.php?image_id=',$image['id'],'">x</a>]';
        }
     }
+    
     include 'templates/footer.php';
 ?>
