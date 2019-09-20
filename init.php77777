@@ -15,7 +15,7 @@ define('DIR_UPLOAD_GALLERY_IMAGE','uploads/gallery_images/');
     
     $servername = "localhost";
     $username = "newscyec_garden";
-    $password = "O[@u8%Cn39.h";  
+    $password = "dfdfdfdfdw34132e";  
     $database = "newscyec_garden";
 
     try{  

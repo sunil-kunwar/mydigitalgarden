@@ -6,72 +6,73 @@
     }
     include 'template/header.php';
 ?>
-<div id="message" style="color: green;font-weight: bold;font-size: 15px;"><?php if(!empty($_GET['message'])) {echo $message = $_GET['message'];} ?><?php if(!empty($_SESSION['msg'])) {echo $_SESSION['msg'];} ?></div>
 
-<div id="errormessage" style="color: red;font-weight: bold;font-size: 15px;"><?php if(!empty($_SESSION['error'])) {echo $_SESSION['error'];} ?></div>
+ 
+<!-- Page Content -->
+ <div class="container border-right border-left" style="padding-top: 26px;">
 
+    <div class="pb-5">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12" id="message" style="color: green;font-weight: bold;font-size: 15px;">
+			<?php if(!empty($_GET['message'])) {echo $message = $_GET['message'];} ?></div>
 
-<div>
-	<h3 style="float: left;">Group of Plants</h3>
-	<h3 style="float: right;"><a href="add_group.php">Add Group</a></h3>
+			<div class="col-lg-12 col-md-12 col-sm-12" id="errormessage" style="color: red;font-weight: bold;font-size: 15px;"><?php if(!empty($_GET['errormessage'])) {echo $errormessage = $_GET['errormessage'];} ?></div>
+			<div class="col-lg-6 col-md-6 col-sm-12"><h2>My Plants Groups</h2></div>
+			<div class="col-lg-6 col-md-6 col-sm-12 text-right"><h3><a href="add_group.php">Add Group</a></h3></div>
+		</div>
+	  <?php $sql = "SELECT * FROM groups WHERE user_id ='".$_SESSION['user_id']."'";
+			$result = mysqli_query($conn,$sql);
+			$rowcount = mysqli_num_rows($result);
+			if($rowcount){
+			while($data=mysqli_fetch_array($result))
+			{
+		?>
+	<?php $id=$data['group_id']; ?>
+      <div class="plant_list">
+				<div class="row">
+				<?php $id=$data['group_id']; ?>
+					<div class="col-lg-5 col-md-5">
+						<?php $group_image= DIR_UPLOAD_GROUP.$data['group_image']; ?>
+						<div class="" style="height: 230px;text-align: center;"><img class="card-img-top h-100" src="<?php echo $group_image;?>" alt="" style="width:auto;"></div>
+					</div>
+					 <div class="col-lg-7 col-md-7">
+						<div class="card-body pt-0">
+							<h4 class="card-title"><?php echo $data['group_name'];?></h4>
+							<div><b>Created Date:</b> <span><?php echo $data['date_added'];?></span></div>
+							<div><b>Location:</b> <?php echo $data['location'];?></span></div>
+							<div><b>Comment:</b> <?php echo $data['comment'];?></span></div>
+						</div>
+						<div class="card-footer">
+							<div class="row" style="padding:10px 0;">
+							 <div class="col-lg-4 col-md-4"><a href="<?php echo "edit_group.php?group_id=$id"; ?>" class="btn btn-primary">Edit</a></div>
+							 <div class="col-lg-4 col-md-4 text-right"><a href="<?php echo "delete_group.php?group_id=$id"; ?>" class="btn btn-danger">Delete</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<?php }
+			}else{?>
+			<div class="col-lg-12 col-md-12 mb-4">
+				You have no any plants group. <a href="add_group.php">Add group.</a>
+			  </div>
+			<?php } ?>
 
-</div>
+   
 
-
-
-<?php $sql = "SELECT * FROM groups";
-	$result = mysqli_query($conn,$sql);
-
-$expireAfter = 1;
-$secondsInactive = time() - $_SESSION['msg'];
-$expireAfterSeconds = $expireAfter * 60;
-if($secondsInactive >= $expireAfterSeconds){	
-	 unset($_SESSION['msg']);
-}
-
-
-	?>
-
-<table width="100%">
-<tr><td height="10"></td></tr>
-
-
-<tr bgcolor="green">
-<td align="center" style="padding:10px;" class="mech_list"><strong>S.No.</strong></td>
-<td align="center" class="mech_list"><strong>Image</strong></td>
-<td align="center" class="mech_list"><strong>Group Name</strong></td>
-<td colspan="2" align="center" class="mech_list"><strong>Action</strong></td>
-</tr>
-
-<?php
-
-$id1=1;
-while($data=mysqli_fetch_array($result))
-{
-?>
-
-<tr bgcolor="#FFCCFF" class="plant_list">
-<?php $id=$data['group_id']; ?>
-<?php $group_image= DIR_UPLOAD_GROUP.$data['group_image']; ?>
-<td align="center" style="padding:10px;"><?php echo $id1; ?></td>
-<td align="center"><img width="150" src="<?php echo $group_image;?>"></td>
-<td align="center"><?php echo $data['group_name'];?></td>
-<td align="center"><a href="<?php echo "edit_group.php?group_id=$id"; ?>">Edit</a></td>
-<td align="center"><a href="<?php echo "delete_group.php?group_id=$id"; ?>">Delete</a></td>
-
-</tr>
-<?php
-$id1++;
-
-}
-?>
-
-
-</table>
-
+    
+    </div>
+    </div>
 
 
 <?php
 
-    include 'template/footer.php';
+   include ('template/footer.php');
 ?>
+<script>
+jQuery(document).ready(function($){ 
+	setTimeout(function() {
+		$('#message').fadeOut('fast');
+	}, 5000); 
+});
+</script>

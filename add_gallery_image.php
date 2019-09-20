@@ -7,8 +7,6 @@
     include 'template/header.php';
 	
 ?>
-
-
 <?php
 $plant_id=$_REQUEST["plant_id"];
 $plant_name=$_REQUEST["plant_name"];
@@ -16,7 +14,7 @@ $plant_name=$_REQUEST["plant_name"];
 if(isset($_POST["submit"])) { 
 	$formOk = true;
 	
-$description=$_POST["description"];
+$description=addslashes($_POST["description"]);
 $plant_id=$_POST["plant_id"];
 
 	//Assign Variables
@@ -68,44 +66,33 @@ $plant_id=$_POST["plant_id"];
 ?>
 
 
+<!-- Page Content -->
+<div class="container border-right border-left" style="padding-top: 26px;">
+<div class="col-lg-12 col-md-12 col-sm-12" id="message" style="color: green;font-weight: bold;font-size: 15px;">
+		<?php if(!empty($_GET['message'])) {echo $message = $_GET['message'];} ?><?php if(!empty($_SESSION['msg'])) {echo $_SESSION['msg'];} ?></div>
 
-<div class="mach_change">
-
-		<div>
-			<h1>Add New Gallery Image for <?php echo $plant_name; ?></h1>
+		<div class="col-lg-12 col-md-12 col-sm-12" id="errormessage" style="color: red;font-weight: bold;font-size: 15px;"><?php if(!empty($_GET['errormessage'])) {echo $errormessage = $_GET['errormessage'];} ?><?php if(!empty($_SESSION['error'])) {echo $_SESSION['error'];} ?></div>
+	<div class="pb-5">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12"><h2>Add New Gallery Image for <?php echo $plant_name; ?></h2>	
+				<form name="group_form" action="" method="post" enctype="multipart/form-data">
+					<input name="plant_id" type="hidden" value="<?php echo $plant_id;?>">
+					<div class="form-group">
+						<label for="plant_gallery_image">Image:</label>
+					<input type="file" class="form-control border-0" id="plant_gallery_image" name="plant_gallery_image" >
+					</div>
+					<div class="form-group">
+						<label for="description">Description:</label>
+						<textarea col='4' rows="5" class="form-control" id="description" name="description" required></textarea>
+					</div>
+					<input type="submit" name="submit" value="Add Gallery Image" class="btn btn-primary" />
+				</form>
+			</div>	
 		</div>
-
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
-<table width="100%">
-
-<tr>
-<td colspan="4" height="30px" style="font-size: 20px; font-weight: bold; color: red;"> <?php echo $_SESSION['add_error'];  $_SESSION['add_error'] = '';?></td> 
-</tr>
-
-
-
-<tr>
-
-<td>Gallery Image</td> 
-
-<td>:</td>
-
-<td><input name="plant_id" type="hidden" value="<?php echo $plant_id;?>"> <input name="plant_gallery_image" type="file" required></td>
-
-</tr>
-<tr>
-<td style="width: 15%;">Description</td>
-
-<td style="width: 5%;">:</td>
-
-<td><input name="description" type="text" id="description" value=" " style="width: 50%;padding: 10px;" required /></td>
-
-</tr>
-
-<tr>
-<td colspan="2"><input type="submit" name="submit" value="Add Image" style="width: auto;" /></td>
-</tr>
-
-</table>
-</form>
+	</div>
 </div>
+	
+	<?php
+
+   include 'template/footer.php';
+?>
