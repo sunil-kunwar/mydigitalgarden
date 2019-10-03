@@ -112,7 +112,7 @@
         }
     }
    
-?>
+z?>
 <!-- Page Content -->
  <div class="container border-right border-left" style="padding-top: 26px;">
 	<div class="pb-5">
@@ -127,32 +127,21 @@
 		?>
 			<div class="col-lg-12 col-md-12 col-sm-12"><h2>Add Plant</h2>	
 				<form name="group_form" action="" method="post" enctype="multipart/form-data">
-					<div class="form-group">
-						<label for="plant_name">Plant Name:</label>
-						<input type="text" class="form-control" id="plant_name" name="plant_name" required>
+				<div class="form-group">
+						
+
+						<select name="Plant Details">
+						<option Value="plant_info">Plant Name</option>
+						<option Value="species">Popular Name</option>
+						<option Value="species">Species</option>
+						<option Value="species">genera</option>
+						<option Value="species">family</option>	
+						<textarea class="form-control" id="comment" name="" required></textarea>					</select>
+						
 					</div>
+					
 					<div class="form-group">
-						<label for="species">Species:</label>
-						<input type="text" class="form-control" id="species" name="species" required>
-					</div>
-					<div class="form-group">
-						<label for="plant_scientific_name">Plant Scientific Name:</label>
-						<input type="text" class="form-control" id="plant_scientific_name" name="plant_scientific_name" required>
-					</div>
-					<div class="form-group">
-						<label for="popular_name">Popular Name:</label>
-						<input type="text" class="form-control" id="popular_name" name="popular_name" required>
-					</div>
-					<div class="form-group">
-						<label for="family">Plant Family:</label>
-						<input type="text" class="form-control" id="family" name="family" required>
-					</div>
-					<div class="form-group">
-						<label for="genera">Plant Genera:</label>
-						<input type="text" class="form-control" id="genera" name="genera" required>
-					</div>
-					<div class="form-group">
-						<label for="number_of_plant">Number of Plant:</label>
+						<label for="number_of_plant">Number of Plants:</label>
 						<input type="number" class="form-control" id="number_of_plant" name="number_of_plant" required>
 					</div>
 					<div class="form-group">
