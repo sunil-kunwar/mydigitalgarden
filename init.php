@@ -1,5 +1,4 @@
 <?php
-
 define('DIR_UPLOAD','uploads/plant_images/');
 define('DIR_UPLOAD_GROUP','uploads/group_images/'); 
 define('DIR_UPLOAD_GALLERY_IMAGE','uploads/gallery_images/'); 
@@ -13,10 +12,10 @@ define('DIR_UPLOAD_GALLERY_IMAGE','uploads/gallery_images/');
     include 'func/thumb.func.php';
     include 'func/function.php';
     
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "newscyec_garden";
+    $servername = "plants.ictatjcub.com";
+    $username = "ictatjcu_plants";
+    $password = "123zxc";  
+    $database = "ictatjcu_plants";
 
     try{  
         $conn = new mysqli($servername, $username, $password, $database);

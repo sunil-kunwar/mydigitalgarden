@@ -7,10 +7,11 @@
     }
     else{
 ?>
-        <a href="./widgets/logout.php">Logout</a> / 
-        <a href="create_album.php">Create Album</a> /
-        <a href="albums.php">Albums</a> / 
-        <a href="upload_image.php">Upload Image</a>
+        <a href="plants.php">My Plants</a> /
+        <a href="groups.php">Groups</a> /
+        <a href="./widgets/logout.php">Logout</a>
+
+        <!--<a href="upload_image.php">Upload Image</a>-->
 <?php
     }
 ?>

@@ -14,9 +14,9 @@ define('DIR_UPLOAD_GALLERY_IMAGE','uploads/gallery_images/');
     include 'func/function.php';
     
     $servername = "localhost";
-    $username = "newscyec_garden";
-    $password = "O[@u8%Cn39.h";  
-    $database = "newscyec_garden";
+        $username = "ictatjcu_plants";
+        $password = "O[@u8%Cn39.h";
+        $database = "newscyec_garden";
 
     try{  
         $conn = new mysqli($servername, $username, $password, $database);

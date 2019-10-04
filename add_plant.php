@@ -112,7 +112,7 @@
         }
     }
    
-z?>
+?>
 <!-- Page Content -->
  <div class="container border-right border-left" style="padding-top: 26px;">
 	<div class="pb-5">
@@ -127,21 +127,56 @@ z?>
 		?>
 			<div class="col-lg-12 col-md-12 col-sm-12"><h2>Add Plant</h2>	
 				<form name="group_form" action="" method="post" enctype="multipart/form-data">
-				<div class="form-group">
-						
-
-						<select name="Plant Details">
-						<option Value="plant_info">Plant Name</option>
-						<option Value="species">Popular Name</option>
-						<option Value="species">Species</option>
-						<option Value="species">genera</option>
-						<option Value="species">family</option>	
-						<textarea class="form-control" id="comment" name="" required></textarea>					</select>
-						
-					</div>
-					
 					<div class="form-group">
-						<label for="number_of_plant">Number of Plants:</label>
+						<label for="plant_name">Plant Name:</label>
+						<input type="text" class="form-control" id="plant_name" name="plant_name" required>
+					</div>
+					<?php
+					$sql1="select* from species;";
+					$result1=$conn->query($sql1);
+					?>
+					<div class="form-group">
+						<label for="species">Species:</label>
+						<select title="species" name="species" class="form-control" aria-invalid="false">
+							<?php foreach($result1 as $key1) {?>
+								<option value="<?=$key1['s_name']?>"> <?=$key1['s_name']?></option>
+							<?php } ?>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="plant_scientific_name">Plant Scientific Name:</label>
+						<input type="text" class="form-control" id="plant_scientific_name" name="plant_scientific_name" required>
+					</div>
+					<div class="form-group">
+						<label for="popular_name">Popular Name:</label>
+						<input type="text" class="form-control" id="popular_name" name="popular_name" required>
+					</div>
+					<?php
+					$sql2="select* from family;";
+					$result2=$conn->query($sql2);
+					?>
+					<div class="form-group">
+						<label for="family">Plant Family:</label>
+						<select title="family" name="family" class="form-control" aria-invalid="false">
+							<?php foreach($result2 as $key2) {?>
+								<option value="<?=$key2['f_name']?>"> <?=$key2['f_name']?></option>
+							<?php } ?>
+						</select>
+					</div>
+					<?php
+					$sql="select* from genera;";
+					$result=$conn->query($sql);
+					?>
+					<div class="form-group">
+						<label for="genera">Plant Genera:</label>
+						<select title="genera" name="genera" class="form-control" aria-invalid="false">
+							<?php foreach($result as $key) {?>
+								<option value="<?=$key['gen_name']?>"> <?=$key['gen_name']?></option>
+							<?php } ?>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="number_of_plant">Number of Plant:</label>
 						<input type="number" class="form-control" id="number_of_plant" name="number_of_plant" required>
 					</div>
 					<div class="form-group">

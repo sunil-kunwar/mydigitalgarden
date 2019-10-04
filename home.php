@@ -5,10 +5,7 @@
         exit();
     }
     include 'template/header.php';
-    
-   
-       
-   
+         
 ?>
 
 <!-- Page Content -->
@@ -26,20 +23,23 @@
 				}
 		?>
 		
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right"><p class=""><?php echo 'Hello ';
-			echo user_data($conn, array($_SESSION['user_id'], 'name'));     ?>!</p></div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right"><p class=""><?php echo 'Hello! ';
+			echo user_data($conn, array($_SESSION['user_id'], 'name'));?></p></div>
     </div> 
 	
 	<div class="row  my-4">
 
-		<div class="col-lg-12 col-md-12 col-sm-12 ">
-			<?php  echo 'Welcome, you can now start <a href="plants.php">Add Plants</a> and <a href="groups.php">create a group of plants.</a>'; ?>
+		<div class="col-lg-12 col-md-12 col-sm-12">
+			<?php  echo 'Welcome to Digital Garden'; ?>
 		</div>
-			<div class="col-lg-12 col-md-12 col-sm-12" id="message" style="color: green;font-weight: bold;font-size: 15px;">
-			<?php if(!empty($_GET['message'])) {echo $message = $_GET['message'];} ?><?php if(!empty($_SESSION['msg'])) {echo $_SESSION['msg'];} ?></div>
+			<div class="col-lg-12 col-md-12 col-sm-12" id="message" style="color:;font-weight: bold;font-size: 15px;">
+			<?php if(!empty($_GET['message'])) {echo $message = $_GET['message'];} ?>
+			<?php if(!empty($_SESSION['msg'])) {echo $_SESSION['msg'];} ?>	
+			</div>
+
 
 			<div class="col-lg-12 col-md-12 col-sm-12" id="errormessage" style="color: red;font-weight: bold;font-size: 15px;"><?php if(!empty($_GET['errormessage'])) {echo $errormessage = $_GET['errormessage'];} ?><?php if(!empty($_SESSION['error'])) {echo $_SESSION['error'];} ?></div>		
-		<div class="col-lg-2 col-md-2 col-sm-6 mt-2"><button type="button" class="btn btn-success" id="add_plant">Add Plants</button></div>
+		<div class="col-lg-2 col-md-2 col-sm-6 mt-2"><button type="button" class="btn btn-success" id="add_plant">Add Plant</button></div>
 		<div class="col-lg-2 col-md-2 col-sm-6 mt-2"><button type="button" class="btn btn-success" id="add_group">Add Group</button></div>
     </div>
 	
@@ -159,9 +159,17 @@
 							<label for="plant_name">Plant Name:</label>
 							<input type="text" class="form-control" id="plant_name" name="plant_name" required>
 						</div>
+						<?php
+					    $sql1="select* from species;";
+					    $result1=$conn->query($sql1);
+					    ?>
 						<div class="form-group col-md-6 col-sm-12">
 							<label for="species">Species:</label>
-							<input type="text" class="form-control" id="species" name="species" required>
+							<select title="species" name="species" class="form-control" aria-invalid="false">
+							<?php foreach($result1 as $key1) {?>
+								<option value="<?=$key1['s_name']?>"> <?=$key1['s_name']?></option>
+							<?php } ?>
+						    </select>
 						</div>
 						<div class="form-group col-md-6 col-sm-12">
 							<label for="plant_scientific_name">Plant Scientific Name:</label>
@@ -171,13 +179,29 @@
 							<label for="popular_name">Popular Name:</label>
 							<input type="text" class="form-control" id="popular_name" name="popular_name" required>
 						</div>
+						<?php
+					    $sql2="select* from family;";
+					    $result2=$conn->query($sql2);
+					    ?>
 						<div class="form-group col-md-6 col-sm-12">
 							<label for="family">Plant Family:</label>
-							<input type="text" class="form-control" id="family" name="family" required>
+							<select title="family" name="family" class="form-control" aria-invalid="false">
+							<?php foreach($result2 as $key2) {?>
+								<option value="<?=$key2['f_name']?>"> <?=$key2['f_name']?></option>
+							<?php } ?>
+						    </select>
 						</div>
+						<?php
+					    $sql="select* from genera;";
+					    $result=$conn->query($sql);
+					    ?>
 						<div class="form-group col-md-6 col-sm-12">
 							<label for="genera">Plant Genera:</label>
-							<input type="text" class="form-control" id="genera" name="genera" required>
+							<select title="genera" name="genera" class="form-control" aria-invalid="false">
+							<?php foreach($result as $key) {?>
+								<option value="<?=$key['gen_name']?>"> <?=$key['gen_name']?></option>
+							<?php } ?>
+						    </select>
 						</div>
 						<div class="form-group col-md-6 col-sm-12">
 							<label for="number_of_plant">Number of Plant:</label>
@@ -383,7 +407,7 @@ if(isset($_POST["submit"])) {
             <h4 class="card-title"><?php echo $datap['plant_name'];?></h4>
             <h6 class="card-title">Scientific Name : <?php echo $datap['plant_scientific_name'];?></h6>
             <h6 class="card-title">No. of Plants : <?php echo $datap['number_of_plant'];?></h6>
-			 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
+			 <p class="card-title">Description : <?php echo $datap['description'];?></p>
           </div>
          
         </div>

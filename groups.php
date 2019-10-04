@@ -17,7 +17,7 @@
 			<?php if(!empty($_GET['message'])) {echo $message = $_GET['message'];} ?></div>
 
 			<div class="col-lg-12 col-md-12 col-sm-12" id="errormessage" style="color: red;font-weight: bold;font-size: 15px;"><?php if(!empty($_GET['errormessage'])) {echo $errormessage = $_GET['errormessage'];} ?></div>
-			<div class="col-lg-6 col-md-6 col-sm-12"><h2>My Plants Groups</h2></div>
+			<div class="col-lg-6 col-md-6 col-sm-12"><h2>My Groups</h2></div>
 			<div class="col-lg-6 col-md-6 col-sm-12 text-right"><h3><a href="add_group.php">Add Group</a></h3></div>
 		</div>
 	  <?php $sql = "SELECT * FROM groups WHERE user_id ='".$_SESSION['user_id']."'";

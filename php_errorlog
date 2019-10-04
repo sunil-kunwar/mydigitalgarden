@@ -1,0 +1,20 @@
+[02-Oct-2019 19:28:50 CST6CDT] PHP Notice:  Undefined index: plant_id in /home/ictatjcu/public_html/plants/collectors/edit_group.php on line 58
+[02-Oct-2019 19:28:50 CST6CDT] PHP Warning:  implode(): Invalid arguments passed in /home/ictatjcu/public_html/plants/collectors/edit_group.php on line 58
+[02-Oct-2019 19:29:19 CST6CDT] PHP Notice:  Undefined index: plant_id in /home/ictatjcu/public_html/plants/collectors/edit_group.php on line 58
+[02-Oct-2019 19:29:19 CST6CDT] PHP Warning:  implode(): Invalid arguments passed in /home/ictatjcu/public_html/plants/collectors/edit_group.php on line 58
+[02-Oct-2019 19:30:11 CST6CDT] PHP Notice:  Undefined index: plant_id in /home/ictatjcu/public_html/plants/collectors/edit_group.php on line 58
+[02-Oct-2019 19:30:11 CST6CDT] PHP Warning:  implode(): Invalid arguments passed in /home/ictatjcu/public_html/plants/collectors/edit_group.php on line 58
+[02-Oct-2019 19:31:16 CST6CDT] PHP Notice:  Undefined index: plant_id in /home/ictatjcu/public_html/plants/collectors/add_group.php on line 43
+[02-Oct-2019 19:31:16 CST6CDT] PHP Warning:  implode(): Invalid arguments passed in /home/ictatjcu/public_html/plants/collectors/add_group.php on line 43
+[02-Oct-2019 19:46:46 CST6CDT] PHP Notice:  Undefined index: plant_id in /home/ictatjcu/public_html/plants/collectors/edit_group.php on line 58
+[02-Oct-2019 19:46:46 CST6CDT] PHP Warning:  implode(): Invalid arguments passed in /home/ictatjcu/public_html/plants/collectors/edit_group.php on line 58
+[02-Oct-2019 19:47:05 CST6CDT] PHP Notice:  Undefined index: plant_id in /home/ictatjcu/public_html/plants/collectors/edit_group.php on line 58
+[02-Oct-2019 19:47:05 CST6CDT] PHP Warning:  implode(): Invalid arguments passed in /home/ictatjcu/public_html/plants/collectors/edit_group.php on line 58
+[02-Oct-2019 19:47:15 CST6CDT] PHP Notice:  Undefined index: plant_id in /home/ictatjcu/public_html/plants/collectors/edit_group.php on line 58
+[02-Oct-2019 19:47:15 CST6CDT] PHP Warning:  implode(): Invalid arguments passed in /home/ictatjcu/public_html/plants/collectors/edit_group.php on line 58
+[02-Oct-2019 19:49:48 CST6CDT] PHP Notice:  Undefined index: plant_id in /home/ictatjcu/public_html/plants/collectors/add_group.php on line 43
+[02-Oct-2019 19:49:48 CST6CDT] PHP Warning:  implode(): Invalid arguments passed in /home/ictatjcu/public_html/plants/collectors/add_group.php on line 43
+[02-Oct-2019 20:01:19 CST6CDT] PHP Notice:  Undefined index: plant_name in /home/ictatjcu/public_html/plants/collectors/edit_gallery_image.php on line 14
+[02-Oct-2019 20:04:25 CST6CDT] PHP Notice:  Undefined index: plant_name in /home/ictatjcu/public_html/plants/collectors/edit_gallery_image.php on line 14
+[02-Oct-2019 20:04:41 CST6CDT] PHP Notice:  Undefined index: plant_name in /home/ictatjcu/public_html/plants/collectors/edit_gallery_image.php on line 14
+[02-Oct-2019 20:05:12 CST6CDT] PHP Notice:  Undefined index: plant_name in /home/ictatjcu/public_html/plants/collectors/edit_gallery_image.php on line 14

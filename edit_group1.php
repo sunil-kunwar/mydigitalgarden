@@ -1,4 +1,4 @@
-<?php 
+<?php error_reporting(E_All);
     include 'init.php';
     if(!logged_in()){
         header('Location: index.php');
@@ -15,7 +15,6 @@
 	<div class="row">
 <?php 
  $group_id=$_REQUEST["group_id"];
-
 function GetImageExtension($imagetype)
  {
    if(empty($imagetype)) return false;
@@ -65,6 +64,7 @@ if($resv){header("location:groups.php?message=Successfully updated plant group i
 }
 
 ?>
+
 
 
 <?php
