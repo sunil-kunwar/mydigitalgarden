@@ -52,22 +52,16 @@
 		}else{
 			$plant_name = $_POST['plant_name'];
 		}
-		if($_POST['plant_scientific_name']==''){
-			$errors[] = 'scientific name is required';
-		}else{
-			echo $plant_scientific_name = $_POST['plant_scientific_name'];
-		}
+		//if($_POST['plant_scientific_name']==''){
+			//$errors[] = 'scientific name is required';
+		//}else{
+			//echo $plant_scientific_name = $_POST['plant_scientific_name'];
+		//}
 		
 		if($_POST['number_of_plant']==''){
 			$errors[] = 'number of plants is required';
 		}else{
 			echo  $number_of_plant = $_POST['number_of_plant'];
-		}
-		
-		if($_POST['species']==''){
-			 $errors[] = 'species is required';
-		}else{
-			echo $species = $_POST['species'];
 		}
 		
 		if($_POST['popular_name']==''){
@@ -85,16 +79,21 @@
 		}else{
 			echo  $genera = $_POST['genera'];
 		}
+		if($_POST['species']==''){
+			 $errors[] = 'species is required';
+		}else{
+			echo $species = $_POST['species'];
+		}
 		if($_POST['description']==''){
 			$errors[] = 'description is required';
 		}else{
 			echo  $description = $_POST['description'];
 		}
-		if($_POST['comment']==''){
-			 $errors[] = 'comment is required';
-		}else{
-			echo $comment = $_POST['comment'];
-		}
+		//if($_POST['comment']==''){
+			 //$errors[] = 'comment is required';
+		//}else{
+			//echo $comment = $_POST['comment'];
+		//}
 		if($_POST['age']==''){
 			$errors[] = 'plant age is required';
 		}else{
@@ -159,26 +158,14 @@
 							<label for="plant_name">Plant Name:</label>
 							<input type="text" class="form-control" id="plant_name" name="plant_name" required>
 						</div>
-						<?php
-					    $sql1="select* from species;";
-					    $result1=$conn->query($sql1);
-					    ?>
-						<div class="form-group col-md-6 col-sm-12">
-							<label for="species">Species:</label>
-							<select title="species" name="species" class="form-control" aria-invalid="false">
-							<?php foreach($result1 as $key1) {?>
-								<option value="<?=$key1['s_name']?>"> <?=$key1['s_name']?></option>
-							<?php } ?>
-						    </select>
-						</div>
-						<div class="form-group col-md-6 col-sm-12">
-							<label for="plant_scientific_name">Plant Scientific Name:</label>
-							<input type="text" class="form-control" id="plant_scientific_name" name="plant_scientific_name" required>
-						</div>
 						<div class="form-group col-md-6 col-sm-12">
 							<label for="popular_name">Popular Name:</label>
 							<input type="text" class="form-control" id="popular_name" name="popular_name" required>
 						</div>
+						<!-- <div class="form-group col-md-6 col-sm-12">
+							<label for="plant_scientific_name">Plant Scientific Name:</label>
+							<input type="text" class="form-control" id="plant_scientific_name" name="plant_scientific_name" required>
+						</div> -->
 						<?php
 					    $sql2="select* from family;";
 					    $result2=$conn->query($sql2);
@@ -190,6 +177,10 @@
 								<option value="<?=$key2['f_name']?>"> <?=$key2['f_name']?></option>
 							<?php } ?>
 						    </select>
+						</div>
+						<div class="form-group col-md-6 col-sm-12">
+							<label for="number_of_plant">Number of Plant:</label>
+							<input type="number" class="form-control" id="number_of_plant" name="number_of_plant" required>
 						</div>
 						<?php
 					    $sql="select* from genera;";
@@ -204,21 +195,29 @@
 						    </select>
 						</div>
 						<div class="form-group col-md-6 col-sm-12">
-							<label for="number_of_plant">Number of Plant:</label>
-							<input type="number" class="form-control" id="number_of_plant" name="number_of_plant" required>
+							<label for="age">Age:</label>
+							<input type="number" class="form-control" id="age" name="age" required>
+						</div>
+						<?php
+					    $sql1="select* from species;";
+					    $result1=$conn->query($sql1);
+					    ?>
+						<div class="form-group col-md-6 col-sm-12">
+							<label for="species">Species:</label>
+							<select title="species" name="species" class="form-control" aria-invalid="false">
+							<?php foreach($result1 as $key1) {?>
+								<option value="<?=$key1['s_name']?>"> <?=$key1['s_name']?></option>
+							<?php } ?>
+						    </select>
 						</div>
 						<div class="form-group col-md-6 col-sm-12">
 							<label for="description">Description:</label>
 							<textarea col='4' rows="2" class="form-control" id="description" name="description" required></textarea>
 						</div>
-						<div class="form-group col-md-6 col-sm-12">
+						<!-- <div class="form-group col-md-6 col-sm-12">
 							<label for="comment">Comment:</label>
 							<textarea col='4' rows="2" class="form-control" id="comment" name="comment" required></textarea>
-						</div>
-						<div class="form-group col-md-6 col-sm-12">
-							<label for="age">Age:</label>
-							<input type="number" class="form-control" id="age" name="age" required>
-						</div>
+						</div> -->
 						<div class="form-group col-md-6 col-sm-12">
 							<label for="add_date">Add Date:</label>
 							<input type="text" class="form-control" id="add_date" name="add_date" required>

@@ -48,16 +48,16 @@
 					 <div class="col-lg-7 col-md-7">
 						<div class="card-body pt-0">
 							<h4 class="card-title"><?php echo $data['plant_name'];?></h4>
-							<div><b>Species:</b> <span><?php echo $data['species'];?></span></div>
-							<div><b>Scientific Name:</b> <?php echo $data['plant_scientific_name'];?></span></div>
 							<div><b>Popular Name:</b> <?php echo $data['popular_name'];?></span></div>
 							<div><b>Plant Family:</b> <?php echo $data['family'];?></span></div>
 							<div><b>Plant Genera:</b><?php echo $data['genera'];?></span></div>
+							<div><b>Species:</b> <span><?php echo $data['species'];?></span></div>
+							<!-- <div><b>Scientific Name:</b> <?php //echo $data['plant_scientific_name'];?></span></div> -->
 							<div><b>Number of Plant:</b> <?php echo $data['number_of_plant'];?></span></div>
 							<div><b>Age: </b><?php echo $data['age'];?></span></div>
 							<div><b>Add Date: </b><?php echo $data['add_date'];?></span></div>
 							<div><b>Description: </b><?php echo $data['description'];?></span></div>
-							<div><b>Comment:</b> <?php echo $data['comment'];?></span></div>
+							<!-- <div><b>Comment:</b> <?php //echo $data['comment'];?></span></div> -->
 						</div>
 						<div class="card-footer">
 							<div class="row" style="padding:10px 0;">

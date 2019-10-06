@@ -17,7 +17,7 @@
        header('Location: home.php');
     }
     else{
-        echo '<img src="images/landing.png" alt="Register a free account today" class="img-rounded" style="width:100%;"/>';
+        echo '<img src="images/index01.png" alt="Register a free account today" class="img-rounded" style="width:100%;"/>';
     }?>
       </div> 
 	 <div class="col-lg-5 col-md-5 col-sm-12 ">

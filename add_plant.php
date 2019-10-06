@@ -14,11 +14,11 @@
 		}else{
 			$plant_name = $_POST['plant_name'];
 		}
-		if($_POST['plant_scientific_name']==''){
-			$errors[] = 'scientific name is required';
-		}else{
-			echo $plant_scientific_name = $_POST['plant_scientific_name'];
-		}
+		// if($_POST['plant_scientific_name']==''){
+		// 	$errors[] = 'scientific name is required';
+		// }else{
+		// 	echo $plant_scientific_name = $_POST['plant_scientific_name'];
+		// }
 		
 		if($_POST['number_of_plant']==''){
 			$errors[] = 'number of plants is required';
@@ -52,11 +52,11 @@
 		}else{
 			echo  $description = $_POST['description'];
 		}
-		if($_POST['comment']==''){
-			 $errors[] = 'comment is required';
-		}else{
-			echo $comment = $_POST['comment'];
-		}
+		// if($_POST['comment']==''){
+		// 	 $errors[] = 'comment is required';
+		// }else{
+		// 	echo $comment = $_POST['comment'];
+		// }
 		if($_POST['age']==''){
 			$errors[] = 'plant age is required';
 		}else{
@@ -131,22 +131,6 @@
 						<label for="plant_name">Plant Name:</label>
 						<input type="text" class="form-control" id="plant_name" name="plant_name" required>
 					</div>
-					<?php
-					$sql1="select* from species;";
-					$result1=$conn->query($sql1);
-					?>
-					<div class="form-group">
-						<label for="species">Species:</label>
-						<select title="species" name="species" class="form-control" aria-invalid="false">
-							<?php foreach($result1 as $key1) {?>
-								<option value="<?=$key1['s_name']?>"> <?=$key1['s_name']?></option>
-							<?php } ?>
-						</select>
-					</div>
-					<div class="form-group">
-						<label for="plant_scientific_name">Plant Scientific Name:</label>
-						<input type="text" class="form-control" id="plant_scientific_name" name="plant_scientific_name" required>
-					</div>
 					<div class="form-group">
 						<label for="popular_name">Popular Name:</label>
 						<input type="text" class="form-control" id="popular_name" name="popular_name" required>
@@ -158,11 +142,13 @@
 					<div class="form-group">
 						<label for="family">Plant Family:</label>
 						<select title="family" name="family" class="form-control" aria-invalid="false">
+							<option>Select Family</option>
 							<?php foreach($result2 as $key2) {?>
 								<option value="<?=$key2['f_name']?>"> <?=$key2['f_name']?></option>
 							<?php } ?>
 						</select>
 					</div>
+
 					<?php
 					$sql="select* from genera;";
 					$result=$conn->query($sql);
@@ -175,18 +161,30 @@
 							<?php } ?>
 						</select>
 					</div>
+					<?php
+					$sql1="select* from species;";
+					$result1=$conn->query($sql1);
+					?>
+					<div class="form-group">
+						<label for="species">Species:</label>
+						<select title="species" name="species" class="form-control" aria-invalid="false">
+							<?php foreach($result1 as $key1) {?>
+								<option value="<?=$key1['s_name']?>"> <?=$key1['s_name']?></option>
+							<?php } ?>
+						</select>
+					</div>
+					<!-- <div class="form-group">
+						<label for="plant_scientific_name">Plant Scientific Name:</label>
+						<input type="text" class="form-control" id="plant_scientific_name" name="plant_scientific_name" required>
+					</div> -->
 					<div class="form-group">
 						<label for="number_of_plant">Number of Plant:</label>
 						<input type="number" class="form-control" id="number_of_plant" name="number_of_plant" required>
 					</div>
-					<div class="form-group">
-						<label for="description">Description:</label>
-						<textarea col='4' rows="5" class="form-control" id="description" name="description" required></textarea>
-					</div>
-					<div class="form-group">
+					<!-- <div class="form-group">
 						<label for="comment">Comment:</label>
 						<textarea col='4' rows="5" class="form-control" id="comment" name="comment" required></textarea>
-					</div>
+					</div> -->
 					<div class="form-group">
 						<label for="age">Age:</label>
 						<input type="number" class="form-control" id="age" name="age" required>
@@ -194,6 +192,10 @@
 					<div class="form-group">
 						<label for="add_date">Add Date:</label>
 						<input type="text" class="form-control" id="add_date" name="add_date" required>
+					</div>
+					<div class="form-group">
+						<label for="description">Description:</label>
+						<textarea col='4' rows="5" class="form-control" id="description" name="description" required></textarea>
 					</div>
 					<div class="form-group">
 						<label for="plant_image">Image:</label>
