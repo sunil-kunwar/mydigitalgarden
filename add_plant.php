@@ -156,6 +156,7 @@
 					<div class="form-group">
 						<label for="genera">Plant Genera:</label>
 						<select title="genera" name="genera" class="form-control" aria-invalid="false">
+							<option>Select Genera</option>
 							<?php foreach($result as $key) {?>
 								<option value="<?=$key['gen_name']?>"> <?=$key['gen_name']?></option>
 							<?php } ?>
@@ -168,6 +169,7 @@
 					<div class="form-group">
 						<label for="species">Species:</label>
 						<select title="species" name="species" class="form-control" aria-invalid="false">
+							<option>Select Species</option>
 							<?php foreach($result1 as $key1) {?>
 								<option value="<?=$key1['s_name']?>"> <?=$key1['s_name']?></option>
 							<?php } ?>

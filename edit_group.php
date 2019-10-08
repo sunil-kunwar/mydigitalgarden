@@ -53,7 +53,7 @@ if(isset($_POST['submit']))
 $group_name=$_POST['group_name'];
 $location=$_POST['location'];
 $date_added=$_POST['date_added'];
-$comment=$_POST['group_name'];
+$comment=$_POST['comment'];
 
 $plants_id = implode(',', $_POST['plant_id']);
 

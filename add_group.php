@@ -135,7 +135,7 @@ if(isset($_POST["submit"])) {
 				  <div class="card-body">
 					<input type="checkbox" name="plant_id[]" id="plant_id" value="<?php echo $data['plant_id'];?>" style="height:20px;width:20px;"/>
 					<h4 class="card-title"><?php echo $data['plant_name'];?></h4>
-					<h6 class="card-title">Scientific Name : <?php echo $data['plant_scientific_name'];?></h6>
+					<h6 class="card-title">family : <?php echo $data['family'];?></h6>
 				  </div>
 				</div>
 			  </div>

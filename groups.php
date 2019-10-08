@@ -44,6 +44,7 @@
 						</div>
 						<div class="card-footer">
 							<div class="row" style="padding:10px 0;">
+								<div class="col-lg-4 col-md-4"><a href="<?php echo "group_gallery.php?id=$id"; ?>" class="btn btn-success">Gallery</a></div>
 							 <div class="col-lg-4 col-md-4"><a href="<?php echo "edit_group.php?group_id=$id"; ?>" class="btn btn-primary">Edit</a></div>
 							 <div class="col-lg-4 col-md-4 text-right"><a href="<?php echo "delete_group.php?group_id=$id"; ?>" class="btn btn-danger">Delete</a></div>
 							</div>
